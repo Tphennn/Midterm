@@ -31,16 +31,15 @@ class MyApp extends StatelessWidget {
             ],
           ),
         ),
-       body: ListView.builder(
-        itemCount: names.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            leading: Icon(names[index]['icon']),
-            title: Text('${names[index]['name']}  ${names[index]['letters']} letters'),
-          );
-        },
-      ),
-        
+         body: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: Icon(names[index]['icon']),
+              title: Text('${names[index]['name']}  ${names[index]['letters']} letters'),
+            );
+          },
+        ),
       ),
     );
   }
