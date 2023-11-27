@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+
+const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  final List<Map<String, dynamic>> names = [
+    {'name': 'Dan', 'letters': 3, 'icon': Icons.person},
+    {'name': 'Reyes', 'letters': 5, 'icon': Icons.person},
+    {'name': 'John', 'letters': 4, 'icon': Icons.person},
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Hello World',
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: darkBlue,
+      ),
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Row(
+            children: [
+              Icon(Icons.home),
+              SizedBox(width: 8), 
+              Text('Hello World'),
+            ],
+          ),
+        ),
+       body: ListView.builder(
+        itemCount: names.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Icon(names[index]['icon']),
+            title: Text('${names[index]['name']}  ${names[index]['letters']} letters'),
+          );
+        },
+      ),
+        
+      ),
+    );
+  }
+}
+
+
